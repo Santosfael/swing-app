@@ -12,7 +12,7 @@ import com.rafael.utils.DatabaseConnection;
 public class UserDAO {
 
 	public User validateLogin(String email, String password) {
-		String sql = "SELECT id, name, password FROM users WHERE email = ? AND password = ?";
+		String sql = "SELECT id, name, email, password FROM users WHERE email = ? AND password = ?";
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
