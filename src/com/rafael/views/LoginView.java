@@ -1,6 +1,7 @@
 package com.rafael.views;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -47,12 +48,15 @@ public class LoginView extends JFrame {
 		
 		inputPanel.add(new JLabel("Senha:"));
 		passwordField = new JPasswordField(20);
+		passwordField.setPreferredSize(new Dimension(200, 30));
 		inputPanel.add(passwordField);
 		
 		add(inputPanel, BorderLayout.CENTER);
 		
 		JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		loginButton = new JButton("Login");
+		loginButton.setPreferredSize(new Dimension(100, 30));
+
 		buttonPanel.add(loginButton);
 		add(buttonPanel, BorderLayout.SOUTH);
 		

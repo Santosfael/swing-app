@@ -1,9 +1,13 @@
 package com.rafael.controllers;
 
+import java.lang.reflect.InvocationTargetException;
+
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 import com.rafael.model.User;
 import com.rafael.model.UserDAO;
+import com.rafael.views.DashboardView;
 import com.rafael.views.LoginView;
 
 public class LoginController {
@@ -35,6 +39,11 @@ public class LoginController {
 					"Sucesso",
 					JOptionPane.INFORMATION_MESSAGE);
 			view.dispose();
+			
+			SwingUtilities.invokeLater(() -> {
+				DashboardView dashboardView  = new DashboardView();
+				dashboardView.setVisible(true);
+			});
 		} else {
 			view.showMessage("E-mail ou senha incorretos.",
 					"Erro de Login",
